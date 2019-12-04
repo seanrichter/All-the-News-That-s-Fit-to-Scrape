@@ -37,16 +37,12 @@ app.get("/scrape", function (req, res) {
   axios
     .get("https://kotaku.com/")
     .then(function (response) {
-      // Load the HTML into cheerio and save it to a variable
-      // '$' becomes a shorthand for cheerio's selector commands, much like jQuery's '$'
+
       var $ = cheerio.load(response.data);
 
       // An empty array to save the data that we'll scrape
       var results = [];
 
-      // Select each element in the HTML body from which you want information.
-      // NOTE: Cheerio selectors function similarly to jQuery's selectors,
-      // but be sure to visit the package's npm page to see how it works
       $("article").each(function (i, element) {
         var title = $(element)
           .find("h1")
@@ -119,9 +115,6 @@ app.get("/title", function(req, res) {
     }
   });
 });
-
-
-
 
 
 app.listen(PORT, function () {

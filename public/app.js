@@ -13,7 +13,7 @@ scrapedData.forEach(function(articles) {
 
     $("#tbody").append(tr);
 });
-}
+};
 
 $.getJSON("/all", function (data) {
     console.log(data);
@@ -69,4 +69,4 @@ $.get('/scrape')
 .then(function(response){
     location.reload()
 })
-})
+});
