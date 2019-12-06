@@ -1,19 +1,19 @@
-function displayResults(scrapedData) {
-// First, empty the table
-$("#tbody").empty();
-// Then, for each entry of that json...
-scrapedData.forEach(function(articles) {
-    // Append each property to the table
-    var tr = $("<tr>").append(
-      $("<td>").text(articles.title),
-      $("<td>").text(articles.link),
-      $("<td>").text(articles.image),
-      $("<td>").text(articles.summary)
-    );
+// function displayResults(scrapedData) {
+// // First, empty the table
+// $("#tbody").empty();
+// // Then, for each entry of that json...
+// scrapedData.forEach(function(articles) {
+//     // Append each property to the table
+//     var tr = $("<tr>").append(
+//       $("<td>").text(articles.title),
+//       $("<td>").text(articles.link),
+//       $("<td>").text(articles.image),
+//       $("<td>").text(articles.summary)
+//     );
 
-    $("#tbody").append(tr);
-});
-};
+//     $("#tbody").append(tr);
+// });
+// };
 
 $.getJSON("/all", function (data) {
     console.log(data);
@@ -30,23 +30,23 @@ function setActive(selector) {
 }
 
 
-$.getJSON("/all", function(data) {
-console.log("im para for displayresults", data)
-// Call our function to generate a table body
-displayResults(data);
-});
+// $.getJSON("/all", function(data) {
+// console.log("im para for displayresults", data)
+// // Call our function to generate a table body
+// displayResults(data);
+// });
 
 
-$("#headline-sort").on("click", function() {
-// Set new column as currently-sorted (active)
-setActive("#title");
+// $("#headline-sort").on("click", function() {
+// // Set new column as currently-sorted (active)
+// setActive("#title");
 
-// Do an api call to the back end for json with all animals sorted by name
-$.getJSON("/title", function(data) {
-    // Call our function to generate a table body
-    displayResults(data);
-});
-});
+// // Do an api call to the back end for json with all animals sorted by name
+// $.getJSON("/title", function(data) {
+//     // Call our function to generate a table body
+//     displayResults(data);
+// });
+// });
 
 
 $("#headline-sort").on("click", function () {
@@ -62,11 +62,11 @@ $("#headline-sort").on("click", function () {
 
 });
 
-$("#more-articles").on('click', function(){
-console.log("ive been clicked")
-$("#tbody").empty();
-$.get('/scrape')
-.then(function(response){
-    location.reload()
-})
-});
+// $("#more-articles").on('click', function(){
+// console.log("ive been clicked")
+// $("#tbody").empty();
+// $.get('/scrape')
+// .then(function(response){
+//     location.reload()
+// })
+// });
